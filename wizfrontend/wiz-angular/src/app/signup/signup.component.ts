@@ -11,8 +11,8 @@ export class SignupComponent implements OnInit {
   signup: FormGroup;
   constructor(private fb: FormBuilder) {
     this.signup = this.fb.group({
-      username: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required]),
+      username: new FormControl('',[Validators.required, Validators.pattern(/^[a-zA-Z0-9]{4,12}$/)]),
+      password: new FormControl('',[Validators.required, Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/)]),
       name: new FormControl('',[Validators.required, Validators.pattern(/^[a-zA-Z]*$/)]),
       email: new FormControl('',[Validators.required, Validators.email]),
       mobileNumber: new FormControl('',[Validators.required,Validators.pattern(/^([6-9])[\d]{9}$/)])
@@ -22,6 +22,6 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
   signUp(){
-    
+
   }
 }
