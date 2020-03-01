@@ -1,0 +1,59 @@
+<div fxLayout="row" fxLayoutAlign="space-evenly center" class="back">
+    <mat-card class="card">
+      <div fxLayout="row" fxLayoutAlign="space-evenly center">
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip color="accent" [routerLink]="['/signup']" routerLinkActive="router-link-active" selected>Sign Up</mat-chip>
+            <mat-chip color="accent" [routerLink]="['/']" routerLinkActive="router-link-active">Login</mat-chip>
+          </mat-chip-list>
+      </div>
+      <form [formGroup]="signup">
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="username" placeholder="username" autocomplete="off"/>
+            <mat-icon matSuffix
+              ><i class="material-icons">supervised_user_circle</i></mat-icon
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              formControlName="password"
+              placeholder="password"
+              [type]="hide ? 'password' : 'text'"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="name" placeholder="Name" autocomplete="off"/>
+            <mat-icon matSuffix
+              ><i class="material-icons">face</i></mat-icon
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="email" placeholder="email" autocomplete="off"/>
+            <mat-icon matSuffix
+              ><i class="material-icons">email</i></mat-icon
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="mobileNumber" placeholder="Phone Number" autocomplete="off"/>
+            <mat-icon matSuffix
+              ><i class="material-icons">phone</i></mat-icon
+            >
+          </mat-form-field>
+        </div>
+      </form>
+      <div fxLayout="row" fxLayoutAlign="space-evenly center">
+        <button mat-raised-button color="accent" (click)="signUp()">Sign Up</button>
+      </div>
+    </mat-card>
+  </div>
+  

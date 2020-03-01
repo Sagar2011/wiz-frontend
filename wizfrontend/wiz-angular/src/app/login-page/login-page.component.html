@@ -2,7 +2,8 @@
   <mat-card class="card">
     <div fxLayout="row" fxLayoutAlign="space-evenly center">
       <mat-chip-list aria-label="Fish selection">
-        <mat-chip color="accent" selected>Enter Credentials</mat-chip>
+        <mat-chip color="accent" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign Up</mat-chip>
+        <mat-chip color="accent" [routerLink]="['/']" routerLinkActive="router-link-active"  selected>Login</mat-chip>
       </mat-chip-list>
     </div>
     <form [formGroup]="login">
