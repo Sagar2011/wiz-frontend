@@ -15,7 +15,8 @@ export class DashboardComponent implements OnInit {
 
   resultsLength = 0;
   isLoadingResults = true;
-
+  profile = {'name':'Sagar', 'email': 's@g.com' , 'number': 9099999999};
+  
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   constructor(private _httpClient: HttpClient) {}
   ngOnInit() {

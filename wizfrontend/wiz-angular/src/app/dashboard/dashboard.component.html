@@ -1,7 +1,37 @@
 <div fxLayout="row" fxLayoutAlign="space-evenly center" class="back">
   <mat-tab-group dynamicHeight>
       <mat-tab label="profile">
-          profile
+        <!-- profile start -->
+        <mat-card class="example-card">
+          <div fxLayout="row wrap" fxLayoutAlign="space-between">
+              <div fxFlex="15%">
+                  <mat-icon>public</mat-icon>
+              </div>
+              <div fxFlex="65%">
+                  <mat-card-title class="title">{{profile.name}}</mat-card-title>
+                  <mat-card-subtitle class="title">{{profile.email}}</mat-card-subtitle>
+              </div>
+              <div fxFlex="10%">
+              </div>
+              <div fxFlex="10%">
+                <ngx-avatar mat-icon-button [name]="profile.name" ></ngx-avatar>
+              </div>
+          </div>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+              <div class="flex-container" fxLayout="row wrap" fxLayoutAlign="space-around center">
+                <mat-icon>edit</mat-icon>
+
+                  <mat-divider vertical style="height: 80px"></mat-divider>
+                  <div fxFlex="70%">
+                      <p>
+                          Mobile number: {{profile.number}}
+                      </p>
+                  </div>
+              </div>
+          </mat-card-content>
+      </mat-card>
+      <!-- profile end -->
       </mat-tab>
       <mat-tab label="student list">
           <div class="example-container mat-elevation-z8">
