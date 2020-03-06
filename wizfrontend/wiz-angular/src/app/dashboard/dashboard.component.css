@@ -1,4 +1,8 @@
-/* Structure */
+mat-tab-group {
+    width: 90%;
+    align-items: center;
+}
+
 .example-container {
     position: relative;
     min-height: 200px;
@@ -13,7 +17,14 @@
   table {
     width: 100%;
   }
-  
+  th.mat-header-cell {
+    padding-left: 24px;
+    padding-right: inherit;
+}
+td.mat-cell{
+    padding-left: 15px;
+    padding-right: 15px;
+}
   .example-loading-shade {
     position: absolute;
     top: 0;
