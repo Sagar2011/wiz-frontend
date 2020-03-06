@@ -11,7 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { AvatarModule } from 'ngx-avatar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -27,6 +27,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDividerModule} from '@angular/material/divider';
+import { AuthInterceptorService } from './auth-interceptor-service.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,10 @@ import {MatDividerModule} from '@angular/material/divider';
     MatSortModule,
     MatDividerModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

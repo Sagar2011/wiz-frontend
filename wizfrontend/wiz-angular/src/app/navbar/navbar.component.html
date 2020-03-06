@@ -9,11 +9,10 @@ fxLayoutAlign="space-between center">
       <div fxLayout="row" fxLayoutAlign="end" *ngIf="show">
         <div fxShow.lt-sm="false" fxShow.gt-md="true" fxShow="true">
           <p style="padding-right: 15px; margin-top: 22px; font-size: 20px">
-            <!-- {{ username | titlecase }} -->
-            Sagar
+            {{ studentProfile.name | titlecase }}
           </p>
         </div>
-        <ngx-avatar mat-icon-button name="Sagar" [matMenuTriggerFor]="menu" bgColor="#ffffff" fgColor="#000000"></ngx-avatar>
+        <ngx-avatar mat-icon-button [name]="studentProfile.name" [matMenuTriggerFor]="menu" bgColor="#ffffff" fgColor="#000000"></ngx-avatar>
         <mat-menu #menu="matMenu">
           <button
             mat-menu-item

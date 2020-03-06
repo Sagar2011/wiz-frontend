@@ -1,6 +1,11 @@
+.back{
+  background-image: url('https://www.learningpolls.org/images/laptop-desk.jpg');
+  height: 91%;
+}
 mat-tab-group {
-    width: 90%;
+    width: auto;
     align-items: center;
+    background-color: white;
 }
 
 .example-container {
