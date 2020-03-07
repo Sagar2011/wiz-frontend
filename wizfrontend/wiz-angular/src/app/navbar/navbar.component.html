@@ -1,0 +1,28 @@
+<mat-toolbar color="primary"
+class="toolbar"
+role="banner"
+fxLayout="row"
+fxLayoutAlign="space-between center">
+    <mat-toolbar-row>
+        <span class="title" [routerLink]="['/']">Students</span>
+      <span class="example-spacer"></span>
+      <div fxLayout="row" fxLayoutAlign="end" *ngIf="show">
+        <div fxShow.lt-sm="false" fxShow.gt-md="true" fxShow="true">
+          <p style="padding-right: 15px; margin-top: 22px; font-size: 20px">
+            {{ studentProfile.name | titlecase }}
+          </p>
+        </div>
+        <ngx-avatar mat-icon-button [name]="studentProfile.name" [matMenuTriggerFor]="menu" bgColor="#ffffff" fgColor="#000000"></ngx-avatar>
+        <mat-menu #menu="matMenu">
+          <button
+            mat-menu-item
+            (click)="logout()"
+            routerLinkActive="active"
+            style="text-align: center;"
+          >
+            <mat-icon>power_settings_new</mat-icon>Logout
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

@@ -1,0 +1,9 @@
+.back{
+    background-image: url('https://www.learningpolls.org/images/laptop-desk.jpg');
+    height: 91%;
+}
+.card{
+    min-width: 25%;
+    max-width: inherit;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
