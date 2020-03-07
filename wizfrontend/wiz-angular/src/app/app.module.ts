@@ -28,6 +28,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDividerModule} from '@angular/material/divider';
 import { InternalComponent } from './internal/internal.component';
+import { LoadingComponent } from './loading/loading.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { InternalComponent } from './internal/internal.component';
     NavbarComponent,
     SignupComponent,
     DashboardComponent,
-    InternalComponent
+    InternalComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -62,9 +66,12 @@ import { InternalComponent } from './internal/internal.component';
     MatPaginatorModule,
     MatSortModule,
     MatDividerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoadingComponent]
 })
 export class AppModule { }
