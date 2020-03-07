@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Component, ViewChild, OnInit} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { StudentService } from '../student.service';
 
 
 @Component({
@@ -10,16 +10,23 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  displayedColumns: string[] = ['created', 'name', 'mobileNumber', 'email'];
+  displayedColumns: string[] = ['createdAt', 'name', 'mobileNumber', 'email'];
   studentsData: any;
 
   resultsLength = 0;
   isLoadingResults = true;
-  profile = {'name':'Sagar', 'email': 's@g.com' , 'number': 9099999999};
+  profile: any;
   
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private stu: StudentService) { }
   ngOnInit() {
+    this.stu.profile().subscribe((response)=>{
+      this.profile = response;
+    });
 
+    this.stu.studentsList().subscribe((res)=>{
+        this.studentsData = res.results;
+        this.isLoadingResults = false;
+    });
   }
 }

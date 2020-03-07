@@ -16,24 +16,6 @@ fxLayoutAlign="space-between center">
         <mat-menu #menu="matMenu">
           <button
             mat-menu-item
-            class="logoutButton"
-            [routerLink]="['/profile']"
-            routerLinkActive="router-link-active"
-            style="text-align: center;"
-          >
-            <mat-icon>face</mat-icon>Profile
-          </button>
-          <button
-            mat-menu-item
-            class="logoutButton"
-            [routerLink]="['/students']"
-            routerLinkActive="router-link-active"
-            style="text-align: center;"
-          >
-            <mat-icon>list</mat-icon>Student list
-          </button>
-          <button
-            mat-menu-item
             (click)="logout()"
             routerLinkActive="active"
             style="text-align: center;"

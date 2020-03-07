@@ -27,7 +27,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDividerModule} from '@angular/material/divider';
-import { AuthInterceptorService } from './auth-interceptor-service.service';
+import { InternalComponent } from './internal/internal.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { AuthInterceptorService } from './auth-interceptor-service.service';
     LoginPageComponent,
     NavbarComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    InternalComponent
   ],
   imports: [
     BrowserModule,
@@ -60,12 +61,10 @@ import { AuthInterceptorService } from './auth-interceptor-service.service';
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDividerModule
+    MatDividerModule,
+    HttpClientModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true
-    }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
